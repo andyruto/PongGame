@@ -21,10 +21,10 @@ public class Paddle {
         yMovement = 0;
 
         box[2] = new Box(new Vector(this.position.getX(), this.position.getY() - (PaddleConstants.HEIGHT / 3)),
-                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
-        box[0] = new Box(this.position, PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
+                    PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3);
+        box[0] = new Box(this.position, PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3);
         box[1] = new Box(new Vector(this.position.getX(), this.position.getY() + (PaddleConstants.HEIGHT / 3)),
-                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
+                    PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3);
 
     }
 
@@ -39,14 +39,10 @@ public class Paddle {
 
     public void moveUp() {
         isMovingUp = true;
-
-
     }
 
     public void moveDown() {
         isMovingDown = true;
-
-
     }
 
     public Vector getPosition() {
@@ -65,13 +61,14 @@ public class Paddle {
 
         position.setByCoordinates(position.getX(), position.getY() + distanceMoved);
 
-        box[2] = new Box(new Vector(this.position.getX(), this.position.getY() - (PaddleConstants.HEIGHT / 3)),
-                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
-        box[0] = new Box(this.position, PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
-        box[1] = new Box(new Vector(this.position.getX(), this.position.getY() + (PaddleConstants.HEIGHT / 3)),
-                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
-
         isMovingUp = false;
         isMovingDown = false;
+
+        box[2] = new Box(new Vector(this.position.getX(), this.position.getY() - (PaddleConstants.HEIGHT / 3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3);
+        box[0] = new Box(this.position, PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3);
+        box[1] = new Box(new Vector(this.position.getX(), this.position.getY() + (PaddleConstants.HEIGHT / 3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3);
+
     }
 }

@@ -81,6 +81,7 @@ public class Ball {
      * @return Die Linie mit der der Ball kollidiert. (null falls es keine Kollision gibt)
      */
     public Line isColliding(Box box) {
+
         int collidingLineIndex = -1;
         Line line[] = new Line[4];
 
@@ -94,10 +95,6 @@ public class Ball {
         for (int j = 0; j < 4; j++) {
             if (isColliding(line[j])) {
                 collidingLineIndex = j;
-                break;
-            }
-            else {
-                collidingLineIndex = -1;
             }
         }
 
