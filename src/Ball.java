@@ -50,8 +50,7 @@ public class Ball {
         else {
         // nein
             // Ist der Ball auf der X-Ebene?
-            if (Math.abs(line.getLocation().getX() - position.getX()) <= BallConstants.RADIUS
-                    || (line.getLocation().getX() - position.getX()) == BallConstants.RADIUS * (-1)) {
+            if (Math.abs(line.getLocation().getX() - position.getX()) <= BallConstants.RADIUS) {
             // ja
                 // Ist der Ball im Y-Bereich?
                 if ((position.getY() - BallConstants.RADIUS) >= line.getLocation().getY()
