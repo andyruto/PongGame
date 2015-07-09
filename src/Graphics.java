@@ -102,39 +102,13 @@ public class Graphics extends JPanel implements ActionListener, KeyListener {
 
     private void drawDot(int x, int y,Graphics2D g2) {
         g2.fillOval(x - ScoreConstants.DOT_RADIUS, y - ScoreConstants.DOT_RADIUS,
-                ScoreConstants.DOT_RADIUS * 2, ScoreConstants.DOT_RADIUS * 2);
+                ScoreConstants.DOT_RADIUS*2, ScoreConstants.DOT_RADIUS*2);
     }
 
     private void step() {
         world.update();
+
         repaint();
-
-        int winner = score.getWinner();
-        if (winner != 0) {
-            JOptionPane.showMessageDialog(this, "Congrats!!!\n" +
-                    "Player" + winner +", you won the game " + createComment() + ".");
-
-            score.reset();
-        }
-    }
-
-    private String createComment() {
-        int diff = (score.getScore(score.getWinner() -1)) - (score.getScore(score.getLoser() -1));
-        if (diff <= 1) {
-            return "with a lot of luck";
-        }
-        else if (diff <= 3) {
-            return "very close";
-        }
-        else if (diff <= 6) {
-            return "Fair and Square";
-        }
-        else if (diff <= 9) {
-            return "with a lot of skill";
-        }
-        else {
-            return "by cheating";
-        }
     }
 
     @Override

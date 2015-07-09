@@ -14,7 +14,7 @@ public class GameScore {
     }
 
     public void score(int player) {
-        score[player] = (score[player] + 1);
+        score[player] = (score[player] + 1) % (ScoreConstants.WINNING_SCORE+1);
     }
 
     public int getWinner() {
@@ -28,22 +28,8 @@ public class GameScore {
             return 0;
         }
     }
-
-    public int getLoser() {
-        if (getWinner() == 2) {
-            return 1;
-        }
-        else {
-            return 2;
-        }
-    }
-
+    
     public int getScore(int player) {
         return score[player];
-    }
-
-    public void reset() {
-        score[ScoreConstants.PLAYER_1] = 0;
-        score[ScoreConstants.PLAYER_2] = 0;
     }
 }
