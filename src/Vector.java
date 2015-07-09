@@ -25,6 +25,12 @@ public class Vector {
         this.y = y;
     }
 
+    public void set(){
+
+
+
+    }
+
     /**
      * Addiert ein Vector-Objekt auf aktuellen Vector.
      * @param vector

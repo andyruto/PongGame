@@ -33,15 +33,19 @@ public class Paddle {
      * @return Die gesuchte Box.
      */
     public Box getBox(int index) {
-        return null;
+        return box[index];
     }
 
     public void moveUp() {
         isMovingUp = true;
+
+
     }
 
     public void moveDown() {
         isMovingDown = true;
+
+
     }
 
     public Vector getPosition() {
@@ -50,10 +54,17 @@ public class Paddle {
 
     public void update() {
         float distanceMoved = 0;
+
+        box[0] = new Box(this.position, (PaddleConstants.WIDTH), (PaddleConstants.HEIGHT/3), false);
+        box[1] = new Box(new Vector(this.position.getX(), (this.position.getY() + PaddleConstants.HEIGHT/3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT/3, false);
+        box[2] = new Box(new Vector(this.position.getX(), (this.position.getY() + ((PaddleConstants.HEIGHT/3) * 2))),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT/3, false);
+
         if (isMovingUp & position.getY() - PaddleConstants.HEIGHT/2 > 0) {
             distanceMoved -= PaddleConstants.MOVEMENT_SPEED;
         }
-        if (isMovingDown & position.getY() + PaddleConstants.HEIGHT/2 < WindowConstants.WORLD_HEIGHT) {
+        else if (isMovingDown & position.getY() + PaddleConstants.HEIGHT/2 < WindowConstants.WORLD_HEIGHT) {
             distanceMoved += PaddleConstants.MOVEMENT_SPEED;
         }
 
