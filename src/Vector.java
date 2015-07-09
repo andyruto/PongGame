@@ -20,12 +20,16 @@ public class Vector {
         return y;
     }
 
-    public void set(float x, float y) {
+    public float getRadian() {
+        return 0;
+    }
+
+    public void setByCoordinates(float x, float y) {
         this.x = x;
         this.y = y;
     }
 
-    public void set(){
+    public void setByRadian(float value, float radian){
 
 
 

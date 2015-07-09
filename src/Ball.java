@@ -14,7 +14,7 @@ public class Ball {
 
     public void update() {
 
-        position.set(position.getX() + velocity.getX(), position.getY() + velocity.getY());
+        position.setByCoordinates(position.getX() + velocity.getX(), position.getY() + velocity.getY());
         System.out.println("Me: " + position.toString() + "; My Friend: " + velocity.toString());
 
     }
@@ -124,10 +124,10 @@ public class Ball {
         float y = velocity.getY();
 
         if (repellVertically) {
-            velocity.set(x, y * -1);
+            velocity.setByCoordinates(x, y * -1);
         }
         else {
-            velocity.set(x * -1, y);
+            velocity.setByCoordinates(x * -1, y);
         }
 
     }
@@ -138,7 +138,12 @@ public class Ball {
      */
     public void repellSrong(boolean repellVertically) {
 
+        if (repellVertically) {
 
+        }
+        else {
+
+        }
 
     }
 

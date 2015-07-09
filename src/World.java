@@ -70,7 +70,6 @@ public class World {
             if (line != null) {
                 // repell normally
                 ball.repell(line.isHorizontal());
-                break;
             }
 
             // check for collision with outer boxes
@@ -78,8 +77,8 @@ public class World {
                 line = ball.isColliding(paddles[i].getBox(j));
                 if (line != null) {
                     // repell with stronger angle
-                    ball.repellSrong(line.isHorizontal());
-                    break;
+                    // ball.repellSrong(line.isHorizontal());
+                    ball.repell(line.isHorizontal());
                 }
             }
         }
