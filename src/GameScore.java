@@ -29,6 +29,15 @@ public class GameScore {
         }
     }
 
+    public int getLoser() {
+        if (getWinner() == 2) {
+            return 1;
+        }
+        else {
+            return 2;
+        }
+    }
+
     public int getScore(int player) {
         return score[player];
     }
