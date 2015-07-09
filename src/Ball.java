@@ -6,7 +6,7 @@ import Contants.BallConstants;
 public class Ball {
 
     private Vector position;
-    private Vector velocity = new Vector(.4f, .7f);
+    private Vector velocity = new Vector(.4f, 0);
 
     public Ball(Vector position) {
         this.position = position;
@@ -14,7 +14,7 @@ public class Ball {
 
     public void update() {
 
-        position.set(position.getX() + velocity.getX(), position.getY() + velocity.getY());
+        position.setByCoordinates(position.getX() + velocity.getX(), position.getY() + velocity.getY());
         System.out.println("Me: " + position.toString() + "; My Friend: " + velocity.toString());
 
     }
@@ -85,9 +85,10 @@ public class Ball {
         Line line[] = new Line[4];
 
         // declare line array
-        for (int i = 0; i < 4; i++) {
-            line[i] = box.getLine(i);
-        }
+        line[0] = box.getLine(0);
+        line[1] = box.getLine(1);
+        line[2] = box.getLine(2);
+        line[3] = box.getLine(3);
 
         // check for collision with line
         for (int j = 0; j < 4; j++) {
@@ -123,10 +124,10 @@ public class Ball {
         float y = velocity.getY();
 
         if (repellVertically) {
-            velocity.set(x, y * -1);
+            velocity.setByCoordinates(x, y * -1);
         }
         else {
-            velocity.set(x * -1, y);
+            velocity.setByCoordinates(x * -1, y);
         }
 
     }
@@ -137,7 +138,12 @@ public class Ball {
      */
     public void repellSrong(boolean repellVertically) {
 
+        if (repellVertically) {
 
+        }
+        else {
+
+        }
 
     }
 

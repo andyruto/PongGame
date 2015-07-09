@@ -8,6 +8,8 @@ public class Paddle {
 
     private Vector position;
 
+    private Box[] box = new Box[3];
+
     private int yMovement;
 
     private boolean isMovingUp = false;
@@ -15,7 +17,15 @@ public class Paddle {
 
     public Paddle(Vector position) {
         this.position = position;
+
         yMovement = 0;
+
+        box[2] = new Box(new Vector(this.position.getX(), this.position.getY() - (PaddleConstants.HEIGHT / 3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
+        box[0] = new Box(this.position, PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
+        box[1] = new Box(new Vector(this.position.getX(), this.position.getY() + (PaddleConstants.HEIGHT / 3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
+
     }
 
     /**
@@ -24,15 +34,19 @@ public class Paddle {
      * @return Die gesuchte Box.
      */
     public Box getBox(int index) {
-        return null;
+        return box[index];
     }
 
     public void moveUp() {
         isMovingUp = true;
+
+
     }
 
     public void moveDown() {
         isMovingDown = true;
+
+
     }
 
     public Vector getPosition() {
@@ -41,14 +55,21 @@ public class Paddle {
 
     public void update() {
         float distanceMoved = 0;
+
         if (isMovingUp & position.getY() - PaddleConstants.HEIGHT/2 > 0) {
             distanceMoved -= PaddleConstants.MOVEMENT_SPEED;
         }
-        if (isMovingDown & position.getY() + PaddleConstants.HEIGHT/2 < WindowConstants.WORLD_HEIGHT) {
+        else if (isMovingDown & position.getY() + PaddleConstants.HEIGHT/2 < WindowConstants.WORLD_HEIGHT) {
             distanceMoved += PaddleConstants.MOVEMENT_SPEED;
         }
 
-        position.set(position.getX(), position.getY() + distanceMoved);
+        position.setByCoordinates(position.getX(), position.getY() + distanceMoved);
+
+        box[2] = new Box(new Vector(this.position.getX(), this.position.getY() - (PaddleConstants.HEIGHT / 3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
+        box[0] = new Box(this.position, PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
+        box[1] = new Box(new Vector(this.position.getX(), this.position.getY() + (PaddleConstants.HEIGHT / 3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT / 3, false);
 
         isMovingUp = false;
         isMovingDown = false;
