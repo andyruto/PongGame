@@ -22,9 +22,13 @@ public class GameScore {
             return 1;
         }
         else if (score[ScoreConstants.PLAYER_2] >= ScoreConstants.WINNING_SCORE) {
+            score[ScoreConstants.PLAYER_1] = 0;
+            score[ScoreConstants.PLAYER_2] = 0;
             return 2;
         }
         else {
+            score[ScoreConstants.PLAYER_1] = 0;
+            score[ScoreConstants.PLAYER_2] = 0;
             return 0;
         }
     }

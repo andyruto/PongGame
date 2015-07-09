@@ -6,7 +6,7 @@ import Contants.BallConstants;
 public class Ball {
 
     private Vector position;
-    private Vector velocity = new Vector(.5f, .5f);
+    private Vector velocity = new Vector(.4f, .7f);
 
     public Ball(Vector position) {
         this.position = position;
@@ -24,7 +24,7 @@ public class Ball {
         if (line.isHorizontal()) {
         // ja
             // Ist der Ball auf der Y-Ebene?
-            if ((line.getLocation().getY() - position.getY()) == BallConstants.RADIUS
+            if (Math.abs(line.getLocation().getY() - position.getY()) <= BallConstants.RADIUS
                     || (line.getLocation().getY() - position.getY()) == BallConstants.RADIUS * (-1)) {
             // ja
                 // Ist der Ball im X-Bereich?
@@ -50,7 +50,7 @@ public class Ball {
         else {
         // nein
             // Ist der Ball auf der X-Ebene?
-            if ((line.getLocation().getX() - position.getX()) == BallConstants.RADIUS
+            if (Math.abs(line.getLocation().getX() - position.getX()) <= BallConstants.RADIUS
                     || (line.getLocation().getX() - position.getX()) == BallConstants.RADIUS * (-1)) {
             // ja
                 // Ist der Ball im Y-Bereich?
