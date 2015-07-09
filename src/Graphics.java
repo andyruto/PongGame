@@ -111,7 +111,10 @@ public class Graphics extends JPanel implements ActionListener, KeyListener {
 
         int winner = score.getWinner();
         if (winner != 0) {
-            JOptionPane.showMessageDialog(this, "Congrats!");
+            JOptionPane.showMessageDialog(this, "Congrats!!!\n" +
+                    "Player" + winner +", you won the game " + ".");
+
+            score.reset();
         }
     }
 
