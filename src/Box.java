@@ -7,7 +7,7 @@ public class Box {
 
     private Line[] lines = new Line[4];
 
-    public Box(Vector position, int width, int height, boolean isHorizontal) {
+    public Box(Vector position, float width, float height, boolean isHorizontal) {
         lines[BoxConstants.BOX_TOP] = new Line(new Vector(position.getX() - width/2, position.getY() + height/2),
                 new Vector(width, 0), true);
         lines[BoxConstants.BOX_RIGHT] = new Line(new Vector(position.getX() + width/2, position.getY() - height/2),

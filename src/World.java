@@ -62,7 +62,7 @@ public class World {
     }
 
     private void handleCollision() {
-        /*
+
         // check for collision with Paddles
         for (int i = 0; i < 2; i++) {
             // check for collision with middle box
@@ -70,6 +70,7 @@ public class World {
             if (line != null) {
                 // repell normally
                 ball.repell(line.isHorizontal());
+                break;
             }
 
             // check for collision with outer boxes
@@ -78,10 +79,10 @@ public class World {
                 if (line != null) {
                     // repell with stronger angle
                     ball.repellSrong(line.isHorizontal());
+                    break;
                 }
             }
         }
-        */
 
         // check for collision with top & bottom walls
         for (int i = 0; i < 2; i++) {

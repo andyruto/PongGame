@@ -8,6 +8,8 @@ public class Paddle {
 
     private Vector position;
 
+    private Box[] box = new Box[3];
+
     private int yMovement;
 
     private boolean isMovingUp = false;
@@ -16,6 +18,13 @@ public class Paddle {
     public Paddle(Vector position) {
         this.position = position;
         yMovement = 0;
+
+        box[0] = new Box(this.position, (PaddleConstants.WIDTH), (PaddleConstants.HEIGHT/3), false);
+        box[1] = new Box(new Vector(this.position.getX(), (this.position.getY() + PaddleConstants.HEIGHT/3)),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT/3, false);
+        box[2] = new Box(new Vector(this.position.getX(), (this.position.getY() + ((PaddleConstants.HEIGHT/3) * 2))),
+                PaddleConstants.WIDTH, PaddleConstants.HEIGHT/3, false);
+
     }
 
     /**
