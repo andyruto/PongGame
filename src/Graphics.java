@@ -107,8 +107,12 @@ public class Graphics extends JPanel implements ActionListener, KeyListener {
 
     private void step() {
         world.update();
-
         repaint();
+
+        int winner = score.getWinner();
+        if (winner != 0) {
+            JOptionPane.showMessageDialog(this, "Congrats!");
+        }
     }
 
     @Override
