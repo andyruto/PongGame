@@ -3,7 +3,6 @@
     <output-path>$PROJECT_DIR$/out/artifacts/PongGame_jar</output-path>
     <root id="archive" name="PongGame.jar">
       <element id="module-output" name="PongGame" />
-      <element id="library" level="application" name="api" />
     </root>
   </artifact>
 </component>

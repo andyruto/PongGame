@@ -6,7 +6,7 @@ import Contants.BallConstants;
 public class Ball {
 
     private Vector position;
-    private Vector velocity = new Vector(.4f, 0);
+    private Vector velocity = new Vector(.4f, .3f);
 
     public Ball(Vector position) {
         this.position = position;
