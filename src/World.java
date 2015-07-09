@@ -66,22 +66,29 @@ public class World {
         // check for collision with Paddles
         for (int i = 0; i < 2; i++) {
             // check for collision with middle box
-            Line line = ball.isColliding(paddles[i].getBox(0));
-            if (line != null) {
+            Line line1 = ball.isColliding(paddles[i].getBox(0));
+            if (line1 != null) {
                 // repell normally
-                ball.repell(line.isHorizontal());
-            }
-
-            // check for collision with outer boxes
-            for (int j = 1; j <= 2; j++) {
-                line = ball.isColliding(paddles[i].getBox(j));
-                if (line != null) {
-                    // repell with stronger angle
-                    // ball.repellSrong(line.isHorizontal());
-                    ball.repell(line.isHorizontal());
-                }
+                ball.repell(line1.isHorizontal());
             }
         }
+        for (int i = 0; i < 2; i++) {
+            // check for collision with middle box
+            Line line2 = ball.isColliding(paddles[i].getBox(2));
+            if (line2 != null) {
+                // repell normally
+                ball.repell(line2.isHorizontal());
+            }
+        }
+        for (int i = 0; i < 2; i++) {
+            // check for collision with middle box
+            Line line3 = ball.isColliding(paddles[i].getBox(1));
+            if (line3 != null) {
+                // repell normally
+                ball.repell(line3.isHorizontal());
+            }
+        }
+
 
         // check for collision with top & bottom walls
         for (int i = 0; i < 2; i++) {
