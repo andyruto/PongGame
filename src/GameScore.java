@@ -14,7 +14,7 @@ public class GameScore {
     }
 
     public void score(int player) {
-        score[player]++;
+        score[player] = (score[player] + 1) % (ScoreConstants.WINNING_SCORE+1);
     }
 
     public int getWinner() {

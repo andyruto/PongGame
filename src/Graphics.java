@@ -50,9 +50,6 @@ public class Graphics extends JPanel implements ActionListener, KeyListener {
         ball = world.getBall();
         score = world.getScore();
 
-        score.score(ScoreConstants.PLAYER_1);
-        score.score(ScoreConstants.PLAYER_1);
-
         stepper.start();
     }
 
@@ -60,7 +57,7 @@ public class Graphics extends JPanel implements ActionListener, KeyListener {
     protected void paintComponent(java.awt.Graphics g) {
         super.paintComponent(g);
 
-        // graphics Objekt f�r neue fuktionen zu Graphics2D casten
+        // graphics Objekt für neue fuktionen zu Graphics2D casten
         Graphics2D g2 = (Graphics2D) g;
 
         // draw paddles
@@ -83,10 +80,10 @@ public class Graphics extends JPanel implements ActionListener, KeyListener {
                 (int) WindowConstants.WORLD_WIDTH, GraphicsConstants.INFO_HEIGHT);
             // player1 score
         drawScore(ScoreConstants.DOT_OFFSET_X + ScoreConstants.DOT_RADIUS,
-                (int) (WindowConstants.WORLD_HEIGHT + GraphicsConstants.INFO_HEIGHT/2), g2, 1, ScoreConstants.PLAYER_1);
+                (int) (WindowConstants.WORLD_HEIGHT + GraphicsConstants.INFO_HEIGHT/2), g2, 1, ScoreConstants.PLAYER_2);
             // player2 score
         drawScore((int) WindowConstants.WORLD_WIDTH - ScoreConstants.DOT_RADIUS - ScoreConstants.DOT_OFFSET_X,
-                (int) (WindowConstants.WORLD_HEIGHT + GraphicsConstants.INFO_HEIGHT/2), g2, -1, ScoreConstants.PLAYER_2);
+                (int) (WindowConstants.WORLD_HEIGHT + GraphicsConstants.INFO_HEIGHT/2), g2, -1, ScoreConstants.PLAYER_1);
     }
 
     private void drawScore(int x, int y, Graphics2D g2, int direction, int player) {
