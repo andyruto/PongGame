@@ -1,6 +1,7 @@
 package GraphicsPainters;
 
 import GameObjects.GameGraphics;
+import sun.reflect.generics.reflectiveObjects.NotImplementedException;
 
 import java.awt.*;
 
@@ -16,7 +17,8 @@ public class WinScreenPainter implements GraphicsPainter {
 
     @Override
     public void paintGraphics(Graphics2D g2, GameGraphics graphics) {
-        mainGame.paintGraphics(g2, graphics);
-        g2.
+        //mainGame.paintGraphics(g2, graphics);
+        //g2.
+        throw new NotImplementedException();
     }
 }

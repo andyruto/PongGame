@@ -1,3 +1,5 @@
+package GameObjects;
+
 import Contants.ScoreConstants;
 
 /**
