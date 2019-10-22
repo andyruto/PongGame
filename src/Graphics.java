@@ -11,7 +11,7 @@ import java.awt.event.KeyListener;
 /**
  * Created by Tonye-Ce on 07.07.15.
  */
-
+/*
 public class Graphics extends JPanel implements ActionListener, KeyListener {
 
     World world = new World(WindowConstants.WIDTH, WindowConstants.HEIGHT);
@@ -133,3 +133,4 @@ public class Graphics extends JPanel implements ActionListener, KeyListener {
         world.keyReleased(e.getKeyChar());
     }
 }
+*/
